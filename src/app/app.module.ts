@@ -15,4 +15,8 @@ import { ContentPageComponent } from './components/content-page/content-page.com
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+
+  
+}
