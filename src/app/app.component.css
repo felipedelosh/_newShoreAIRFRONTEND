@@ -1,0 +1,14 @@
+.header{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/img/banner/banner.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.ico_ns{
+    max-width: 100px;
+    max-height: 100px;
+}
