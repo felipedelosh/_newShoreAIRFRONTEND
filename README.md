@@ -1,27 +1,35 @@
-# NewShoreAIRFRONTEND
+<h1 align="center"> FelipedelosH </h1>
+<br>
+<h4>Name of project</h4>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+![Banner](docs/banner.png)
+:construction: Status of project :construction:
+<br><br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-## Development server
+## :hammer:Funtions:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- `Function 1`: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.<br>
+- `Function 2`: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.<br>
+- `Function 3`: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.<br>
+- `Function 3a`: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.<br>
+- `Function 4`: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet.<br>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :play_or_pause_button:How to execute a project
 
-## Build
+Double click
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## :hammer_and_wrench:Tech.
 
-## Running unit tests
+- code programing
+- framework
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## :warning:Warning.
 
-## Running end-to-end tests
+- limitations.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Autor
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| [<img src="https://avatars.githubusercontent.com/u/38327255?v=4" width=115><br><sub>Andrés Felipe Hernánez</sub>](https://github.com/felipedelosh)|
+| :---: |
