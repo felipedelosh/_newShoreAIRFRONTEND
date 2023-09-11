@@ -1,5 +1,46 @@
-<div class="row">
-    <p class="h1">Vuelos Disponibles</p>
-    
+<div class="available_flights">
+    <div class="container">
+        <div class="row">
+            <p class="h3 text-center">Vuelos Disponibles</p>
+        </div>
+    </div>
 </div>
+<div class="fly_selector">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="input-container">
+                    <input type="text" id="input" required="">
+                    <label for="input" class="label">Origin</label>
+                    <div class="underline"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-container">
+                    <input type="text" id="input" required="">
+                    <label for="input" class="label">Destination</label>
+                    <div class="underline"></div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Select Currency
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">COP</a>
+                      <a class="dropdown-item" href="#">MXN</a>
+                      <a class="dropdown-item" href="#">EUR</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">USD</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-success">SEARCH</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 

@@ -19,7 +19,9 @@ Header
 END Header
 */
 
-
+.linkeable_element{
+    cursor: pointer;
+}
 
 
 /*!
