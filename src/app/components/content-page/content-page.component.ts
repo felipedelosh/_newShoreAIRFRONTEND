@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
-import { environment } from '../../../environment';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-content-page',
