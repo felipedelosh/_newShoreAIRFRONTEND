@@ -64,9 +64,9 @@ export class ContentPageComponent implements OnInit{
   }
 
   getALLFlights(){
-    this.apiService.getData("/Journey/getFlightsV0").subscribe(d => {
-      if (d === null) this.data_api_flights = "NO SERVER CONECTION";
-      this.data_api_flights = this.formatApiFlights(d["data"]);
+    this.apiService.getAllFlights().subscribe(d => {
+      if (d === null) this.data_api_flights = "- WARNING - NO SERVER CONECTION - ";
+      this.data_api_flights = d["data"];
     });
   }
 

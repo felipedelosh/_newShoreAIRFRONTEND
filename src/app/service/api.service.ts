@@ -13,6 +13,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  public getAllFlights(): Observable<any>{
+    return this.http.get<any>(`${this.api_base_url}/Journey/getAllFlights`);
+  }
+
   public getData(_url_args: string): Observable<any>{
     return this.http.get<any>(this.api_base_url+_url_args);
   }
