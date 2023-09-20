@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
-import { environment } from '../../../environments/environment';
+import { Flight } from '../../interfaces/flight.interface';
 
 @Component({
   selector: 'app-content-page',
   templateUrl: './content-page.component.html',
   styleUrls: ['./content-page.component.css']
 })
+
+
 export class ContentPageComponent implements OnInit{
+  //Save all flights in response
+  flights: Flight[] = [];
+  x: any[] = [1,2,3,4];
 
   //Information abouts services, api conection and flights
   public data_api_flights: string = " TRY TO CONECT WITH SERVER - NO CONECTION - NO GET DATA ";
 
   //HIDE HTML RESPONSE
-  public isDisplayed: boolean = false; 
-  txtMsg: string = "";
-  txtTotalPrice: string = "";
+  public isDisplayed: boolean = false; // Show hide a DIV to response API 
+  txtMsg: string = ""; // The API comment to show final user
+  txtTotalPrice: string = ""; 
   txtTotalFlights: string = "";
 
   //INPUT VALUES
@@ -24,7 +29,6 @@ export class ContentPageComponent implements OnInit{
   txtInputCurrencySelector: string = "";
   txtCountFlights: string = "";
   txtSpecifyFlights: string = "";
-  response_in_html = "<h1>ACA ESTOY</h1>";
 
   //Json Response
   private data: any = {};
@@ -79,18 +83,22 @@ export class ContentPageComponent implements OnInit{
   }
 
   formatFlightResponse(data: any){
-    let jsonData = data["data"];
+    //Reset previus response
+    this.flights = [];
+
     let parseJsonData = JSON.parse(data["data"]);
     this.txtTotalPrice = parseJsonData["Price"];
-
     this.txtCountFlights = parseJsonData["Flights"].length;
-    
     let output: string = "";
-    let counter = 1;
-    parseJsonData["Flights"].forEach(function(i: any) {
-      output += "Vuelo: " + counter + " > " + i.Origin + ":" + i.Destination + "///";
-      counter += 1;
+    parseJsonData["Flights"].forEach((i: any) => {
+      const tempFlight: Flight = {
+        origin: i.Origin,
+        destination: i.Destination,
+        price: i.Price
+      };
+      this.flights.push(tempFlight);
     });
+
     this.txtSpecifyFlights = output;
     this.txtMsg = parseJsonData["Message"];
   }

@@ -38,10 +38,23 @@
 </div>
 <div *ngIf="isDisplayed" class="response_api">
     <div class="container">
-        <p class="h1">Vuelo De: {{ txtInputOrigin }}, hacia: {{ txtInputDesination }}</p>
-        <p class="h4">Total PRICE: {{ txtTotalPrice }}</p>
-        <p class="h4">Total Flights:{{ txtCountFlights }}<br> {{ txtTotalFlights }}</p>
-        <p class="h4">Flights: {{ txtSpecifyFlights }}</p>
-        <p class="h8">{{ txtMsg }}</p>
+        <div *ngIf="flights.length === 0">
+            <h1>No hay Datos Disponibles</h1>
+        </div>
+        <h2>Precio total del vuelo: {{ txtTotalPrice | currency }}</h2>
+        <h2>Total de Escalas: {{ flights.length  }}</h2>
+        <div *ngIf="flights.length > 0" class="row">
+            <div class="col" *ngFor="let flight of flights; let i=index">
+                <div class="card">
+                    <img class="card-img-top" src="../../../assets/img/images/plane.jpg" alt="plane gta sa">
+                    <div class="card-body">
+                      <h5 class="card-title">Vuelo {{ i + 1 }}</h5>
+                      <p class="card-text">Vuelo de {{ flight.origin }} hacia {{ flight.destination }} por tan solo ${{ flight.price }}USD </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <i>{{ txtMsg }}</i>
     </div>
 </div>
