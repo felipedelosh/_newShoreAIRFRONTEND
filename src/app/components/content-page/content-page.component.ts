@@ -9,11 +9,11 @@ import { environment } from '../../../environments/environment';
 })
 export class ContentPageComponent implements OnInit{
 
-  //Information all flights
+  //Information abouts services, api conection and flights
   public data_api_flights: string = " TRY TO CONECT WITH SERVER - NO CONECTION - NO GET DATA ";
 
   //HIDE HTML RESPONSE
-  public edited: boolean = false; 
+  public isDisplayed: boolean = false; 
   txtMsg: string = "";
   txtTotalPrice: string = "";
   txtTotalFlights: string = "";
@@ -37,15 +37,15 @@ export class ContentPageComponent implements OnInit{
   }
 
   getSpecifyFlight(){
-    let _url: string = `/Journey/Get?origin=${this.txtInputOrigin}&destination=${this.txtInputDesination}&Currience_selector=${this.txtInputCurrencySelector}&Authorization=bearer ${environment.apiKey}`;
-    this.apiService.getData(_url).subscribe(d => {
-      if (d === null) this.data_api_flights = "NO SERVER CONECTION";
+    this.apiService.getFlightInformation(this.txtInputOrigin, this.txtInputDesination, this.txtInputCurrencySelector, ).subscribe(d => {
+      if (d === null) this.data_api_flights = "* ERROR TO GET FLIGHT *";
+      //Server response
       if(d["status"] === "200"){
-        this.edited = true;
         this.formatFlightResponse(d);
+        this.showDivFlightDisplayInformation();
       }else{
         this.data_api_flights = "  ERROR  ";
-        this.edited = false;
+        this.hideDivFlightDisplayInformation();
       }
     });
     
@@ -63,23 +63,19 @@ export class ContentPageComponent implements OnInit{
     this.txtInputCurrencySelector = event.target.value;
   }
 
+  hideDivFlightDisplayInformation(){
+    this.isDisplayed = false;
+  }
+
+  showDivFlightDisplayInformation(){
+    this.isDisplayed = true;
+  }
+
   getALLFlights(){
     this.apiService.getAllFlights().subscribe(d => {
       if (d === null) this.data_api_flights = "- WARNING - NO SERVER CONECTION - ";
       this.data_api_flights = d["data"];
     });
-  }
-
-  formatApiFlights(data: string){
-    let output: string = "";
-
-    let arrFlights = JSON.parse(data);
-
-    arrFlights.forEach(function(i: any) {
-      output = output + "Vuelo Desde: " + i.DepartureStation + " hasta " + i.ArrivalStation + " Por tan Solo: $" + i.Price + "USD" +  " /*/ ";
-    });
-
-    return output;
   }
 
   formatFlightResponse(data: any){

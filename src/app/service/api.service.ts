@@ -13,12 +13,16 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Call to .net API
+   * @returns Str with all flights
+   */
   public getAllFlights(): Observable<any>{
     return this.http.get<any>(`${this.api_base_url}/Journey/getAllFlights`);
   }
 
-  public getData(_url_args: string): Observable<any>{
-    return this.http.get<any>(this.api_base_url+_url_args);
+  public getFlightInformation(origin: string, destination: string, currencySelector: string): Observable<any>{
+    return this.http.get<any>(`${this.api_base_url}/Journey/Get?origin=${origin}&destination=${destination}&Currience_selector=${currencySelector}&Authorization=bearer ${environment.apiKey}`);
   }
 
 }
