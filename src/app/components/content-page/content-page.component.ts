@@ -22,6 +22,7 @@ export class ContentPageComponent implements OnInit{
   txtMsg: string = ""; // The API comment to show final user
   txtTotalPrice: string = ""; 
   txtTotalFlights: string = "";
+  txtCurrienceISOPrice: string = "";
 
   //INPUT VALUES
   txtInputOrigin: string = "";
@@ -29,9 +30,6 @@ export class ContentPageComponent implements OnInit{
   txtInputCurrencySelector: string = "";
   txtCountFlights: string = "";
   txtSpecifyFlights: string = "";
-
-  //Json Response
-  private data: any = {};
   
 
   constructor(private apiService: ApiService){}
@@ -89,6 +87,7 @@ export class ContentPageComponent implements OnInit{
     let parseJsonData = JSON.parse(data["data"]);
     this.txtTotalPrice = parseJsonData["Price"];
     this.txtCountFlights = parseJsonData["Flights"].length;
+    this.txtCurrienceISOPrice = parseJsonData["currienceISO"];
     let output: string = "";
     parseJsonData["Flights"].forEach((i: any) => {
       const tempFlight: Flight = {
