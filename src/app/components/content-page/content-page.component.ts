@@ -87,7 +87,7 @@ export class ContentPageComponent implements OnInit{
     let parseJsonData = JSON.parse(data["data"]);
     this.txtTotalPrice = parseJsonData["Price"];
     this.txtCountFlights = parseJsonData["Flights"].length;
-    this.txtCurrienceISOPrice = parseJsonData["currienceISO"];
+    this.txtCurrienceISOPrice = parseJsonData["CurrienceISO"];
     let output: string = "";
     parseJsonData["Flights"].forEach((i: any) => {
       const tempFlight: Flight = {
